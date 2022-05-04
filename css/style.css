@@ -68,7 +68,6 @@ img {
 }
 
 /* Sidenav */
-
 .sidenav {
   grid-area: sidenav;
   padding: 30px;
@@ -116,6 +115,109 @@ img {
   align-self: end;
 }
 
+/* Content - Estilos */
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: -0.005rem;
+  color: rgba(0, 0, 0, .7);
+}
+
+.informacoes p + p {
+  margin-top: 30px;
+}
+
+/* Content - Titulo */
+.titulo {
+  color: #B07DFB;
+}
+
+.titulo h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.titulo span {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Content - Caracteristicas */
+.caracteristicas {
+  display: flex;
+  align-items: flex-start;
+}
+
+.caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, .15);
+
+  position: relative;
+}
+
+.caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+
+.caracteristicas span {
+  display: block;
+  color: #B07DFB;
+}
+
+.numero {
+  font-size: 3rem;
+  line-height: 1;
+  margin-top: 10px auto;
+}
+
+.rotulo {
+  padding: 5px 0;
+  border-radius: 0 0 5px 5px;
+  background: #FFFFFF;
+
+  position: relative;
+  top: 2px;
+}
+
+.destaque {
+  font-size: .875rem;
+  color: #B07DFB;
+  max-width: 16rem;
+}
+
+.citacao,
+.atributos {
+  align-self: start;123
+  padding: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, .15);
+}
+
+.citacao p {
+  max-width: 500px;12
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.atributos li {
+  font-family: Courier, monospace;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 15px;
+  color: #FFFFFF;
+}
+
+.atributos li + li {
+  border-top: 2px solid #B07DFB;12
+}
 
 /* Anuncios */
 .anuncios {
