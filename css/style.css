@@ -16,7 +16,9 @@ ul {
 }
 
 img {
+  display: block;
   max-width: 100%;
+  border-radius: 5px;
 }
 
 /* Grid geral */
@@ -65,18 +67,77 @@ img {
   max-width: 200px;
 }
 
+/* Sidenav */
+
 .sidenav {
   grid-area: sidenav;
+  padding: 30px;
+  background: #FAFBFC;
 }
 
+.sidenav li a {
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto 30px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, .15);
+  background: #FFFFFF;
+  transition: .2s ease-out;
+}
+
+.sidenav li a:hover {
+  background: #B07DFB;
+}
+
+/* Content */
 .content {
   grid-area: content;
+  margin: 0 autp;
+  max-width: 900px;
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
+.col-wide {
+  grid-column: 1/-1;
+}
+
+.imagem-1 {
+  grid-row: span 2;
+  align-self: end;
+}
+
+.imagem-2 {
+  align-self: end;
+}
+
+
+/* Anuncios */
 .anuncios {
   grid-area: anuncios;
+
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  gap: 30px;
+
+  background: #FAFBFC;
 }
 
+/* Footer */
 .footer {
   grid-area: footer;
+
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
+}
+
+.footer p {
+  text-align: center;
+  padding: 30px;
+  color: #FFFFFF;
 }
