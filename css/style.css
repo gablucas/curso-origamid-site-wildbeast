@@ -17,7 +17,7 @@ ul {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -32,11 +32,38 @@ img {
   ;
 }
 
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas: 
+      'header header header'
+      'sidenav content content'
+      'sidenav anuncios anuncios'
+      'footer footer footer'
+    ;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .estrutura {
+    grid-template-columns: 1fr;
+
+    grid-template-areas: 
+      'header'
+      'sidenav'
+      'content'
+      'anuncios'
+      'footer'
+    ;
+  }
+}
+
 /* Header */
 .header {
   grid-area: header;
-  padding: 30px;
+
   display: grid;
+  padding: 30px;
   grid-template-columns: 1fr auto;
   align-items: center;
 
@@ -52,7 +79,7 @@ img {
 .header nav a {
   display: block;
   padding: 10px;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.125rem;
   background: rgba(0, 0, 0, .1);
   border-radius: 5px;
@@ -65,6 +92,24 @@ img {
 
 .logo {
   max-width: 200px;
+}
+
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: auto;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .header nav ul {
+    gap: 10px;
+  }
+
+  .header nav a {
+    font-size: 1rem;
+  }
 }
 
 /* Sidenav */
@@ -90,6 +135,48 @@ img {
   background: #B07DFB;
 }
 
+@keyframes seta {
+
+  from {
+    right: 30px;
+  }
+
+  to {
+    right: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidenav {
+    padding: 0 30px;
+    overflow-x: auto;
+
+    position: relative;
+  }
+
+  .sidenav::after {
+    content: '→';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, .3);
+
+    animation: seta .5s ease-in 0s infinite alternate;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav li {
+    flex: 1 0 60px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0;
+  }
+}
+
 /* Content */
 .content {
   grid-area: content;
@@ -100,6 +187,12 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
 }
 
 .col-wide {
@@ -191,7 +284,7 @@ p {
 
 .citacao,
 .atributos {
-  align-self: start;123
+  align-self: start;
   padding: 30px;
   border-radius: 5px;
   background: linear-gradient(135deg, #8844EE, #B07DFB);
@@ -199,7 +292,7 @@ p {
 }
 
 .citacao p {
-  max-width: 500px;12
+  max-width: 500px;
   margin: 0 auto;
   font-size: 1.5rem;
   font-style: italic;
@@ -221,6 +314,7 @@ p {
 
 /* Anuncios */
 .anuncios {
+  grid-template-columns:  repeat(auto-fit, minmax(150px, 1fr));
   grid-area: anuncios;
 
   display: grid;
